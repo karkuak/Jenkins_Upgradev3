@@ -9,12 +9,12 @@ pipeline {
             }
             stage('Build') {
                   steps {
-                        echo 'Building Sample Maven Project'
+                        build job: 'secondjob'
                   }
             }
             stage('Deploy') {
                   steps {
-                        echo "Deploying in Staging Area"
+                        build job: 'package'
                   }
             }
             stage('Deploy Production') {
